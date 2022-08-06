@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div id="clock">
+      <span></span>
+      <div id="hh"></div>
+      <div id="mh"></div>
+      <div id="sh"></div>
+    </div>
+
+    <script>
+      function adjustClock() {
+      let d, h, m, s, hdeg;
+
+      d = new Date();
+      h = d.getHours();
+      m = d.getMinutes();
+      s = d.getSeconds();
+      hdeg = h * 30 + m / 2;
+
+      hh.style.transform = `rotate(${hdeg}deg)`;
+      mh.style.transform = `rotate(${m * 6}deg)`;
+      sh.style.transform = `rotate(${s * 6}deg)`;
+    }
+
+    window.addEventListener("load", function () {
+      setInterval(adjustClock, 1000);
+    });
+    </script>
+  </body>
+</html>

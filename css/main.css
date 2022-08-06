@@ -1,0 +1,100 @@
+/* Start Global Rules */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #009688;
+  --main-transition: 0.3s;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dcdcdc;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+
+#clock {
+  position: relative;
+  background: url("../imgs/clock_face.png") no-repeat;
+  background-size: cover;
+  width: 316px;
+  height: 316px;
+}
+#clock > span {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 10;
+}
+#clock > #hh,
+#mh,
+#sh {
+  position: absolute;
+  transform-origin: bottom;
+  opacity: 1;
+}
+#clock > #hh {
+  width: 30px;
+  height: 98px;
+  top: 59px;
+  left: 143px;
+  background: url(../imgs/hours_hand2.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#clock > #mh {
+  width: 17px;
+  height: 132px;
+  background: url(../imgs/minutes_hand.png) no-repeat;
+  background-size: cover;
+  top: 27px;
+  left: 150px;
+}
+#clock > #sh {
+  width: 2px;
+  height: 130px;
+  top: 29px;
+  left: 157px;
+  opacity: 0.3;
+  background: #f07400;
+  border-radius: 7px;
+}
